@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎉 Quiz Finished</h1>
+
+    <!-- ✅ Score display -->
+    <h2>Your Score: <span id="score">0</span> / {{ total }}</h2>
+
+    <a href="/" class="btn">Play Again</a>
+    <a href="/leaderboard" class="link">🏆 Leaderboard</a>
+</div>
+
+<!-- ✅ PUT SCRIPT HERE -->
+<script>
+let finalScore = {{ score }};
+let current = 0;
+let display = document.getElementById("score");
+
+let interval = setInterval(() => {
+    current++;
+    display.innerText = current;
+
+    if (current >= finalScore) {
+        clearInterval(interval);
+    }
+}, 100);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+<script>
+confetti({
+    particleCount: 150,
+    spread: 70,
+    origin: { y: 0.6 }
+});
+</script>
+</body>
+</html>

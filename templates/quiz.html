@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="progress-bar">
+    <div class="progress" style="width: {{ (q_num / 7) * 100 }}%"></div>
+</div>
+    <h2>Question {{ q_num }}</h2>
+    <h3>{{ question.question }}</h3>
+
+    <p class="timer">⏱️ Time left: <span id="timer">10</span>s</p>
+
+    <form method="POST" id="quizForm">
+        {% for option in question.options %}
+            <label class="option">
+                <input type="radio" name="answer" value="{{ option }}" required>
+                {{ option }}
+            </label>
+        {% endfor %}
+
+        <button type="submit">Next</button>
+    </form>
+</div>
+
+<script>
+let time = 10;
+let timer = document.getElementById("timer");
+
+let countdown = setInterval(() => {
+    time--;
+    timer.innerText = time;
+
+    if (time <= 0) {
+        clearInterval(countdown);
+        document.getElementById("quizForm").submit();
+    }
+}, 1000);
+</script>
+
+</body>
+</html>

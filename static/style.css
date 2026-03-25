@@ -1,0 +1,144 @@
+
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main Container */
+.container {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 15px;
+    font-size: 28px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h3 {
+    margin-bottom: 15px;
+}
+
+/* Input */
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+/* Buttons */
+button, .btn {
+    background: #3b82f6;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+    background: #2563eb;
+    transform: scale(1.05);
+}
+
+/* Options */
+.option {
+    display: block;
+    background: #334155;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.option:hover {
+    background: #475569;
+}
+
+/* Radio spacing */
+.option input {
+    margin-right: 10px;
+}
+
+/* Timer */
+.timer {
+    color: #facc15;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Links */
+.link {
+    display: block;
+    margin-top: 15px;
+    color: #38bdf8;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Table (Leaderboard) */
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #475569;
+}
+
+th {
+    background: #334155;
+}
+
+tr:hover {
+    background: #475569;
+}
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #334155;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    background: #22c55e;
+    transition: width 0.3s ease;
+}
